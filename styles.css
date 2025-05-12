@@ -1,0 +1,140 @@
+/* perustyyli */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #373434;
+}
+
+
+/* Intro-screenin tyyli */
+#intro-screen {
+    background-image: url('images/background.png');
+    background-repeat: repeat-y;
+    background-size: 900px auto;
+    background-position: center;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+h2, h1, p {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin: 20px 0;
+}
+
+
+h3 {
+    margin: 10px 10px;
+}
+
+
+button {
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+    align-self: flex-start;
+    padding: 20px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#game-screen {
+    display: none;
+}
+
+
+#game-board {
+    display: grid;
+    gap: 0px;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    width: fit-content;
+    height: fit-content;
+    margin: 10px auto;
+    border: 2px solid #333;
+    padding: 0px;
+    background-color: rgba(221, 221, 221, 0.8);
+}
+
+
+/* Yleinen määrittely kaikille pelikentän ruuduille */
+.cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Määrittely pelikentän seinäruuduille */
+.wall {
+    background-image: url('images/wall.png');
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+
+
+.player {
+    background-image: url('images/player.png'); /* Asetetaan pelaajalle kuva */
+    background-size: cover; /*Kuva kattaa koko ruudun */
+}
+
+
+.hornmonster {
+    background-image: url('images/hornmonster.png'); /*haamun kuva*/
+    background-size: cover; /* Skaalaa kuva siististi täyttämään ruutu */
+}
+
+
+/*Ammukset ulkoasu */
+.bullet {
+    background-color: red; /*Ammuksen väri on punainen*/
+    border-radius: 50%; /*Pyöristetään ammus ympyrän muotoon */
+    width: 100%; /*Leveys*/
+    height: 100%; /*Korkeus*/
+    animation: fadeOut 0.5s ease-out; /* Animaatio, jossa ammus haalistuu 0.5 sekunnin aikana */
+}
+/* Määritellään animaatio nimeltä fadeOut */
+@keyframes fadeOut {
+    0% {            /* Alussa animaatio on täysin näkyvä */
+        opacity: 1; /* Täysi näkyvyys */
+    }
+    100% {          /* Lopussa animaatio on täysin läpinäkyvä */
+        opacity: 0; /* Ammus "häviää" ruudulta visuaalisesti */
+    }
+}
+
+
+#score-board {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+    color: #fff;
+    position : absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
